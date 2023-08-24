@@ -1,0 +1,54 @@
+* {
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+.nunito {
+  font-family: 'nunito', font-sans;
+}
+.border-b-1 {
+  border-bottom-width: 1px;
+}
+.border-l-1 {
+  border-left-width: 1px;
+}
+hover\:border-none:hover {
+  border-style: none;
+}
+#sidebar {
+  transition: ease-in-out all .3s;
+  z-index: 9999;
+}
+#sidebar span {
+    opacity: 0;
+    position: absolute;
+    transition: ease-in-out all .1s;
+}
+
+#sidebar:hover {
+    width: 150px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+}
+
+#sidebar:hover span {
+    opacity: 1;
+}
+#main-content {
+  background: #151c31;
+}
+.text-main {
+  color: #cacdd1;
+}
+.custom-hover:hover {
+    color: black;
+    background: #283046;
+}
+.bg-primary{
+  background: #283046;
+}
+.bg-secondary {
+  background: #161d31;
+}
+
+.ct-chart-bar .ct-label, .ct-chart-line .ct-label {
+  color: #cacdd1;
+}
