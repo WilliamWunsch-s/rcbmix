@@ -4,7 +4,8 @@ let totalGasto = document.getElementById('gasto')
 let toneladas = document.getElementById('toneladas')
 let mediaCaminhao = document.getElementById('mediaCaminhao')
 
-let empresas = [empresaA = {
+let empresas = [
+empresaA = {
     "nome": "rcbmixA",
     "faturado": 10.000,
     "gasto": 2.500,
@@ -50,32 +51,32 @@ function updateValues (selectedCompany){
     if (selectedCompany === 'Default') {
         let somaTotal = calcularSomaTotal()
 
-        totalFaturado.innerHTML = `<h3 class="font-bold text-3xl text-main">R$ ${somaTotal.somaFaturado.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
-        <h5 class="font-bold text-main text-center">Total Faturado</h5>`
+        totalFaturado.innerHTML = `<h3 class="font-bold text-3xl text-white">R$ ${somaTotal.somaFaturado.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
+        <h5 class="font-bold text-white text-center">Total Faturado</h5>`
 
-        totalGasto.innerHTML = `<h3 class="font-bold text-3xl text-main">R$ ${somaTotal.somaGasto.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
-        <h5 class="font-bold text-main text-center">Total Gasto</h5>`
+        totalGasto.innerHTML = `<h3 class="font-bold text-3xl text-white">R$ ${somaTotal.somaGasto.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
+        <h5 class="font-bold text-white text-center">Total Gasto</h5>`
 
-        toneladas.innerHTML = `<h3 class="font-bold text-3xl text-main text-center">${somaTotal.somaToneladas}</h3>
-        <h5 class="font-bold text-main text-center">Toneladas Transportadas</h5>`
+        toneladas.innerHTML = `<h3 class="font-bold text-3xl text-white text-center">${somaTotal.somaToneladas}</h3>
+        <h5 class="font-bold text-white text-center">Toneladas Transportadas</h5>`
 
-        mediaCaminhao.innerHTML = `<h3 class="font-bold text-3xl text-main">R$ ${somaTotal.somaMediaCaminhao.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
-        <h5 class="font-bold text-main text-center">Média por Caminhão</h5>`
+        mediaCaminhao.innerHTML = `<h3 class="font-bold text-3xl text-white">R$ ${somaTotal.somaMediaCaminhao.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
+        <h5 class="font-bold text-white text-center">Média por Caminhão</h5>`
     } else {
         let selectedEmpresa = empresas.find(empresa => empresa.nome === selectedCompany)
 
         if (selectedEmpresa) {
-            totalFaturado.innerHTML = `<h3 class="font-bold text-3xl text-main">R$ ${selectedEmpresa.faturado.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
-            <h5 class="font-bold text-main text-center">Total Faturado</h5>`
+            totalFaturado.innerHTML = `<h3 class="font-bold text-3xl text-white">R$ ${selectedEmpresa.faturado.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
+            <h5 class="font-bold text-white text-center">Total Faturado</h5>`
             
-            totalGasto.innerHTML = `<h3 class="font-bold text-3xl text-main">R$ ${selectedEmpresa.gasto.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
-            <h5 class="font-bold text-main text-center">Total Gasto</h5>`
+            totalGasto.innerHTML = `<h3 class="font-bold text-3xl text-white">R$ ${selectedEmpresa.gasto.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
+            <h5 class="font-bold text-white text-center">Total Gasto</h5>`
             
-            toneladas.innerHTML = `<h3 class="font-bold text-3xl text-main text-center">${selectedEmpresa.toneladas}</h3>
-            <h5 class="font-bold text-main text-center">Toneladas Transportadas</h5>`
+            toneladas.innerHTML = `<h3 class="font-bold text-3xl text-white text-center">${selectedEmpresa.toneladas}</h3>
+            <h5 class="font-bold text-white text-center">Toneladas Transportadas</h5>`
             
-            mediaCaminhao.innerHTML = `<h3 class="font-bold text-3xl text-main">R$ ${selectedEmpresa.mediaCaminhao.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
-            <h5 class="font-bold text-main text-center">Média por Caminhão</h5>`
+            mediaCaminhao.innerHTML = `<h3 class="font-bold text-3xl text-white">R$ ${selectedEmpresa.mediaCaminhao.toLocaleString('pt-BR', {minimumFractionDigits: 3})}</h3>
+            <h5 class="font-bold text-white text-center">Média por Caminhão</h5>`
         }
     }
 }
@@ -89,19 +90,109 @@ selectElement.addEventListener('change', (event) => {
 // Chamada inicial para exibir os valores padrão
 updateValues('Default')
 
-var mainChart = new Chartist.Line('#chart1', {
-    labels: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
+function atualizarGrafico(serie, cor) {
+    mainChart.update({
+        series: [serie],
+        options: {
+            lineSmooth: {
+                type: 'monotone',
+                fillOpacity: 0.5
+            },
+            low: 0,
+            showArea: true,
+            showPoint: false,
+            fullWidth: true,
+            lineSmooth: Chartist.Interpolation.simple({
+                divisor: 2
+            }),
+            chartPadding: {
+                right: 30
+            },
+            plugins: [
+                Chartist.plugins.tooltip()
+            ],
+            axisX: {
+                showGrid: false
+            },
+            axisY: {
+                onlyInteger: true,
+                showGrid: false,
+            },
+            fullWidth: true,
+            series: {
+                [serie.name]: {
+                    lineSmooth: Chartist.Interpolation.simple(),
+                    showArea: true,
+                    showPoint: false,
+                    color: cor
+                }
+            }
+        }
+    })
+}
+
+const data = {
+    labels: [empresas[0].nome, empresas[0].nome, empresas[0].nome,empresas[0].nome],
     series: [
-        [1, 1, 5, 2, 5, 4, 3, 7, 8, 9, 10, 11],
-        [2, 3, 4, 8, 1, 2, 4, 5, 10, 23, 42, 12],
-        [5, 4, 3, 2, 1, 0.5, 1, 8, 10, 11, 23, 24]
+        [1, 1, 5, 2, 5, 4, 3, 7, 8, 9, 10, 11], // Gastos
+        [2, 3, 4, 8, 1, 2, 4, 5, 10, 23, 42, 12], // Toneladas
+        [5, 4, 3, 2, 1, 0.5, 1, 8, 10, 11, 23, 24] // Faturado
     ]
-}, {
+}
+
+// Opções do gráfico
+const options = {
     low: 0,
     showArea: true,
     showPoint: false,
     fullWidth: true
-})
+}
+function alternarClasseSerie(classeSerie) {
+    const grafico = document.getElementById('chart3');
+
+    // Remova todas as classes da série
+    grafico.classList.remove('ct-series-a', 'ct-series-b', 'ct-series-c');
+
+    // Adicione a classe da série desejada
+    grafico.classList.add(classeSerie);
+}
+
+// Crie o gráfico inicialmente
+const mainChart = new Chartist.Line('#chart1', data, options)
+const mostraFaturados = document.getElementById('mostraFaturados');
+const mostraGastos = document.getElementById('mostraGastos');
+const mostraToneladas = document.getElementById('mostraToneladas');
+
+mostraFaturados.addEventListener('click', () => {
+    alternarClasseSerie('ct-series-c');
+    mainChart.update({
+        series: [data.series[2]],
+        labels: data.labels // Mostra apenas a série "Faturado"
+    });
+});
+
+mostraGastos.addEventListener('click', () => {
+    alternarClasseSerie('ct-series-a');
+    mainChart.update({
+        series: [data.series[0]],
+        labels: data.labels // Mostra apenas a série "Gastos"
+    });
+});
+
+mostraToneladas.addEventListener('click', () => {
+    alternarClasseSerie('ct-series-b');
+    mainChart.update({
+        series: [data.series[1]],
+        labels: data.labels // Mostra apenas a série "Toneladas"
+    });
+});
+function mostrarTudo() {
+    alternarClasseSerie('ct-series-default'); // Defina a classe padrão
+    mainChart.update(data); // Restaure os dados originais
+}
+
+const mostraTudoBtn = document.getElementById('mostraTudo');
+mostraTudoBtn.addEventListener('click', mostrarTudo);
 
 mainChart.on('draw', function(data) {
     if (data.type === 'line' || data.type === 'area') {
