@@ -1,277 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RCBMIX</title>
-    <meta name="description" content="description here">
-    <meta name="keywords" content="keywords,here">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rcbmix</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet">
     <link rel="stylesheet" href="./rcbmix.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
-    <!--Replace with your tailwind.css once created-->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"> -->
 
 </head>
 
 <body>
-  <!-- Side bar-->
-    <div id="sidebar" class="h-screen w-16 menu text-white p-4 flex nunito static fixed shadow bg-primary">
 
-        <ul class="list-reset flex flex-col justify-between h-full">
-            <li class="my-2 md:my-0">
-                <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover-main">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home inline-block mr-3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="w-full inline-block pt-1 md:pb-0 text-sm">Home</span>
-                </a>
-            </li>
-            <li class="my-2 md:my-0 ">
-                <a href="./empresas.html" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover-main">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user inline-block mr-3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="w-full inline-block pt-1 md:pb-0 text-sm">Empresas</span>
-                </a>
-            </li>
-            <li class="my-2 md:my-0">
-                <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover-main">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package inline-block mr-3"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg><span class="w-full inline-block pt-1 md:pb-0 text-sm">Frotas</span>
-                </a>
-            </li>
-            <li class="mt-auto">
-                <img width="140" height="37" src="https://fiqon.com.br/wp-content/uploads/2022/10/logo-1.png" class="py-8 logo2" alt="logo FiqOn" data-lazy-src="https://fiqon.com.br/wp-content/uploads/2022/10/logo-1.png" data-ll-status="loaded">
-            </li>
-        </ul>
-
-    </div>
-
-    <div class="flex flex-row flex-wrap flex-1 flex-grow content-start pl-16">
-
-        <div class="h-40 lg:h-20 w-full flex flex-wrap">
-            <nav id="header" class="bg-primary w-full lg:max-w-sm flex items-center border-gray-300 order-2 lg:order-1">
-
-                <div class="px-2 w-full">
-                    <select name="" class="bg-primary rounded-full w-full py-3 px-4 text-white font-bold leading-tight focus:outline-none focus:bg-primary focus:shadow-md" id="form-field2">
-                        <option value="Default" selected>TOTAL</option>
-                        <!-- <option value="A">Empresa a</option>
-                        <option value="B">Empresa b</option>
-                        <option value="C">Empresa c</option> -->
-                    </select>
-                </div>
-
-            </nav>
-            <nav id="header1" class="bg-primary w-auto flex-1 border-gray-300 order-1 lg:order-2">
-
-                <div class="flex h-full justify-between items-center">
-
-                    <!--Search-->
-                    <div class="relative w-full max-w-3xl px-6">
-                        <div class="absolute h-10 mt-1 left-0 top-0 flex items-center pl-10">
-                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+    <div class="bg-second w-full h-screen text-main flex">
+        <!-- sidebar -->
+        <div class="flex-initial w-12 h-screen bg-primary flex justify-center">
+            <nav class="w-full pt-7">
+                <ul class="flex justify-center">
+                    <li class="hover-menu">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-home">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
                             </svg>
-                        </div>
-
-                        <input id="search-toggle" type="search" placeholder="search" class="block w-full bg-primary focus:outline-none focus:bg-white focus:shadow-md text-white font-bold rounded-full pl-12 pr-4 py-3" onkeyup="updateSearchResults(this.value);">
-
-                    </div>
-                    <!-- / Search-->
-                </div>
-
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
-
-        <!--Dash Content -->
-        <div id="dash-content" class="bg-secondary py-6 lg:py-0 w-full lg:max-w-sm flex flex-wrap content-start">
-
-            <div class="w-1/2 lg:w-full" >
-                <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6 custom-hover">
-                    <div class="flex flex-col items-center">
-                        <div class="flex-shrink">
-                            <div class="rounded-full p-3 bg-gray-300"><i class="fa fa-wallet fa-fw fa-inverse text-indigo-500"></i></div>
-                        </div>
-                        <div class="flex-1 transition duration-300 ease-in-out" id="faturado">
-                            <!-- <h3 class="font-bold text-3xl text-white">R$ 10.000</h3> -->
-                            <!-- <h5 class="font-bold text-white text-center">Total Faturado</h5> -->
-                        </div>
+        <!-- content -->
+        <div class="flex-initial w-full h-full px-8 pt-6">
+            <!-- header -->
+            <div class="w-full flex items-center justify-between">
+                <div class="flex flex-col">
+                    <span class="uppercase text-2xl">Relatório de faturamento</span>
+                    <small>Relatório de Faturamento de Cliente e Caminhões</small>
+                </div>
+                <!-- orgs -->
+                <div class="flex items-center gap-2 w-80">
+                    <span>Clientes:</span>
+                    <div class="flex items-center w-full">
+                        <select name=""
+                            class="rounded-sm w-full h-6 py-3 px-4 bg-primary text-main font-bold focus:outline-none focus:bg-primary focus:shadow-md"
+                            id="form-field2">
+                            <option value="Default" selected>TOTAL</option>
+                            <option value="A">Empresa a</option>
+                            <option value="B">Empresa b</option>
+                            <option value="C">Empresa c</option>
+                        </select>
                     </div>
                 </div>
             </div>
 
-            <div class="w-1/2 lg:w-full" >
-                <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6 custom-hover">
-                    <div class="flex flex-col items-center">
-                        <div class="flex-shrink">
-                            <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-file-invoice-dollar fa-fw fa-inverse text-indigo-500"></i></div>
-                        </div>
-                        <div class="flex-1 transition duration-300 ease-in-out" id="gasto">
-                            <!-- <h3 class="font-bold text-3xl text-white">R$ 2.000</h3>
-                            <h5 class="font-bold text-white text-center">Total Gasto</h5> -->
-                        </div>
+            <!-- bignumbers -->
+
+            <div class="w-full h-44 rounded-md my-10 bg-primary flex items-center gap-10 px-4 flex-wrap">
+                <!-- cardbignumber -->
+                <div class="flex-1 h-36 bg-second rounded-md">
+                    <div class="flex flex-col items-center h-full justify-center gap-5">
+                        <span>LUCRO TOTAL</span>
+                        <span id="lucro" class="number-font text-3xl">2,2 mi</span>
+                    </div>
+                </div>
+                <div class="flex-1 h-36 bg-second rounded-md">
+                    <div class="flex flex-col items-center h-full justify-center gap-5">
+                        <span>VALOR FATURADO</span>
+                        <span id="lucro" class="number-font text-3xl">5,7 mi</span>
+                    </div>
+                </div>
+                <div class="flex-1 h-36 bg-second rounded-md">
+                    <div class="flex flex-col items-center h-full justify-center gap-5">
+                        <span>VALOR GASTO</span>
+                        <span id="lucro" class="number-font text-3xl">3,5 mi</span>
+                    </div>
+                </div>
+                <div class="flex-1 h-36 bg-second rounded-md">
+                    <div class="flex flex-col items-center h-full justify-center gap-5">
+                        <span>GASTO POR CAMINHÃO</span>
+                        <span id="lucro" class="number-font text-3xl">1,7 mi</span>
+                    </div>
+                </div>
+                <div class="flex-1 h-36 bg-second rounded-md">
+                    <div class="flex flex-col items-center h-full justify-center gap-5">
+                        <span>MÉDIA DE COMBUSTIVEL</span>
+                        <span id="lucro" class="number-font text-3xl">900 mil</span>
                     </div>
                 </div>
             </div>
 
-            <div class="w-1/2 lg:w-full" >
-                <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6 custom-hover">
-                    <div class="flex flex-col items-center">
-                        <div class="flex-shrink">
-                            <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-truck fa-fw fa-inverse text-indigo-500" ></i></div>
-                        </div>
-                        <div class="flex-1 transition duration-300 ease-in-out" id="toneladas">
-                            <!-- <h3 class="font-bold text-3xl text-center text-white">2000</h3>
-                            <h5 class="font-bold text-white text-center">Toneladas Transportadas</h5> -->
-                        </div>
+            <!-- filter -->
+            <div class="w-full flex items-end justify-center gap-5">
+                <div class="flex flex-col gap-2">
+                    <label for="form-date-picker" class="uppercase text-sm">From</label>
+                    <div>
+                        <input placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
+                        <input placeholder="" type="hidden" class="bg-primary pl-2 rounded-md h-6">
                     </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="form-date-picker" class="uppercase text-sm">to</label>
+                    <div>
+                        <input placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
+                        <input placeholder="" type="hidden" class="bg-primary pl-2 rounded-md h-6">
+                    </div>
+                </div>
+                <div class="flex mb-1">
+                    <button type="button" class="flex items-center gap-2 bg-btn-filter text-white p-1 px-2 rounded-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="mr-50 p-0 feather feather-search">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg><span>Filter</span>
+                    </button>
                 </div>
             </div>
 
-            <div class="w-1/2 lg:w-full">
-                <div class="border-2 border-gray-400 border-dashed hover:border-transparent hover:shadow-xl rounded p-6 m-2 md:mx-10 md:my-6 custom-hover">
-                    <div class="flex flex-col items-center">
-                        <div class="flex-shrink">
-                            <div class="rounded-full p-3 bg-gray-300"><i class="fas fa-server fa-fw fa-inverse text-indigo-500"></i></div>
-                        </div>
-                        <div class="flex-1 transition duration-300 ease-in-out" id="mediaCaminhao">
-                            <!-- <h3 class="font-bold text-3xl text-white">152 days</h3>
-                            <h5 class="font-bold text-white text-center">Server Uptime</h5> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!--Graph Content -->
-        <div id="main-content" class="w-full flex-1">
-
-            <div class="flex flex-1 flex-wrap">
-
-                <div class="w-full xl:w-2/3 p-6 xl:max-w-6xl">
-
-                    <!--"Container" for the graphs"-->
-                    <div class="max-w-full lg:max-w-3xl xl:max-w-5xl">
-
-                        <!--Graph Card-->
-                        <div class="border-b p-3">
-                            <h5 class="font-bold text-white">FATURAMENTOS/GASTOS/TONELADAS</h5>
-                        </div>
-                        <div class="pt-5 pl-5 pt-5">
-                            <div class="ct-chart ct-golden-section" id="chart3"></div>
-                        </div>
-                        <div class="pl-16">
-                            <span id="mostraFaturados" class="cursor-pointer"><span class="retangulo green mx-2"></span><strong class="text-white" >FATURADOS</strong></span>
-                            <span id="mostraGastos" class="cursor-pointer"><span class="retangulo red mx-2"></span><strong class="text-white" >GASTOS</strong></span>
-                            <span id="mostraToneladas" class="cursor-pointer"><span class="retangulo white mx-2"></span><strong class="text-white" >TONELADAS</strong></span>
-                            <span id="mostraTudo" class="cursor-pointer"><span class="retangulo bg-primary mx-2"></span><strong class="text-white" >TODOS</strong></span>
-                        </div>
-                        <!--/Graph Card-->
-
-                        <!--Table Card-->
-                        <div class="p-3">
-                            <div class="border-b p-3">
-                                <h5 class="font-bold text-white">Table</h5>
-                            </div>
-                            <div class="p-5">
-                                <table class="w-full p-5 text-white">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-left text-white">Name</th>
-                                            <th class="text-left text-white">Side</th>
-                                            <th class="text-left text-white">Role</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td>Obi Wan Kenobi</td>
-                                            <td>Light</td>
-                                            <td>Jedi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Greedo</td>
-                                            <td>South</td>
-                                            <td>Scumbag</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Darth Vader</td>
-                                            <td>Dark</td>
-                                            <td>Sith</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <p class="py-2"><a href="#">See More issues...</a></p>
-
-                            </div>
-                        </div>
-                        <!--/table Card-->
-
-                    </div>
-
-                </div>
-
-                <div class="w-full xl:w-1/3 p-6 xl:max-w-4xl border-l-1 border-gray-300">
-
-                    <!--"Container" for the graphs"-->
-                    <div class="max-w-sm lg:max-w-3xl xl:max-w-5xl">
-
-                        <!--Graph Card-->
-
-                        <div class="border-b p-3">
-                            <h5 class="font-bold text-white">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <div class="ct-chart ct-golden-section" id="chart2"></div>
-                        </div>
-
-                        <!--/Graph Card-->
-
-                        <!--Graph Card-->
-                        <div class="border-b p-3">
-                            <h5 class="font-bold text-white">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <div class="ct-chart ct-golden-section" id="chart3"></div>
-                        </div>
-
-                        <!--/Graph Card-->
-
-                        <!--Graph Card-->
-
-                        <div class="border-b p-3">
-                            <h5 class="font-bold text-white">Graph</h5>
-                        </div>
-                        <div class="p-5">
-                            <div class="ct-chart ct-golden-section" id="chart4"></div>
-                        </div>
-
-                        <!--/Graph Card-->
-
-                        <!--Template Card-->
-                        <div class="p-3">
-                            <div class="border-b p-3">
-                                <h5 class="font-bold text-white">Template</h5>
-                            </div>
-                            <div class="p-5">
-
-                            </div>
-                        </div>
-                        <!--/Template Card-->
-
-                    </div>
-
-                </div>
-
+            <!-- graph 01 -->
+            <div class="w-full h-auto bg-primary my-10 p-8">
+               <div id="chart"></div>
             </div>
 
         </div>
-
     </div>
 
-    
-
-    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="./rcbmix.js"></script>
 </body>
+
 </html>
