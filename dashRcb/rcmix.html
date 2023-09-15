@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rcbmix</title>
 
-    <link rel="stylesheet" href="./rcbmix.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"> -->
 
@@ -14,9 +14,9 @@
 
 <body>
 
-    <div class="bg-second w-full h-screen text-main flex">
+    <div class="bg-second w-full h-auto text-main flex">
         <!-- sidebar -->
-        <div class="flex-initial w-12 h-screen bg-primary flex justify-center">
+        <div class="flex-initial w-12 h-auto bg-primary flex justify-center">
             <nav class="w-full pt-7">
                 <ul class="flex justify-center">
                     <li class="hover-menu">
@@ -45,12 +45,9 @@
                     <span>Clientes:</span>
                     <div class="flex items-center w-full">
                         <select name=""
-                            class="rounded-sm w-full h-6 py-3 px-4 bg-primary text-main font-bold focus:outline-none focus:bg-primary focus:shadow-md"
-                            id="form-field2">
+                            class="rounded-sm w-full h-6 py-3 px-4 bg-primary font-bold focus:bg-primary"
+                            id="form-field">
                             <option value="Default" selected>TOTAL</option>
-                            <option value="A">Empresa a</option>
-                            <option value="B">Empresa b</option>
-                            <option value="C">Empresa c</option>
                         </select>
                     </div>
                 </div>
@@ -60,31 +57,31 @@
 
             <div class="w-full h-44 rounded-md my-10 bg-primary flex items-center gap-10 px-4 flex-wrap">
                 <!-- cardbignumber -->
-                <div class="flex-1 h-36 bg-second rounded-md">
+                <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
                         <span>LUCRO TOTAL</span>
-                        <span id="lucro" class="number-font text-3xl">2,2 mi</span>
+                        <span id="lucro" class="number-font text-3xl"></span>
                     </div>
                 </div>
-                <div class="flex-1 h-36 bg-second rounded-md">
+                <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
                         <span>VALOR FATURADO</span>
-                        <span id="lucro" class="number-font text-3xl">5,7 mi</span>
+                        <span id="faturado" class="number-font text-3xl"></span>
                     </div>
                 </div>
-                <div class="flex-1 h-36 bg-second rounded-md">
+                <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
                         <span>VALOR GASTO</span>
-                        <span id="lucro" class="number-font text-3xl">3,5 mi</span>
+                        <span id="gasto" class="number-font text-3xl"></span>
                     </div>
                 </div>
-                <div class="flex-1 h-36 bg-second rounded-md">
+                <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
                         <span>GASTO POR CAMINHÃO</span>
                         <span id="lucro" class="number-font text-3xl">1,7 mi</span>
                     </div>
                 </div>
-                <div class="flex-1 h-36 bg-second rounded-md">
+                <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
                         <span>MÉDIA DE COMBUSTIVEL</span>
                         <span id="lucro" class="number-font text-3xl">900 mil</span>
@@ -129,7 +126,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="./rcbmix.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>
