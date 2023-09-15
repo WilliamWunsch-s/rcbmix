@@ -35,47 +35,20 @@
   background: #00cfe8;
 }
 
-.ct-horizontal, .ct-vertical {
-  stroke-dasharray: none;
-  stroke-width: 1px; 
-  stroke: var(--color-text);
+.card{
+    background-color: #161D3174;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    transition: all ease .3s;
 }
-.ct-bar{
-  stroke-width: 2.5rem;
+.card:hover {
+    box-shadow: 0px 0px 20px 1px #161D3170;
 }
-/* lucro */
-.ct-series-a {
-  stroke: var(--green);
-}
-
-/* valor faturado */
-.ct-series-b{
-  stroke: var(--blue);
+.apexcharts-xaxis-label-y {
+    letter-spacing: 0.1rem;
 }
 
-/* gasto */
-.ct-series-c{
-  stroke: var(--red);
-}
-
-.ct-chart-bar .ct-label.ct-horizontal.ct-end {
-  -webkit-box-align: flex-start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  text-align: center;
-  text-anchor: start;
-}
-.ct-label.ct-vertical.ct-start {
-  -webkit-box-align: flex-end;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  -webkit-box-pack: flex-end;
-  -ms-flex-pack: flex-end;
-  text-anchor: end;
+#form-field::selection { 
+    color: var(--color-text);
 }
