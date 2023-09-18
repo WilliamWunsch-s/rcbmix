@@ -9,7 +9,10 @@
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEVHcEwA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WJ79BRFAAAAD3RSTlMAYCTnRjKkxfkVERCgscbEgDwQAAAAaklEQVQYlWVP7RKAIAgbKn5l8f5vm6CWV/vBbQOOASiCdAS84K/h1HCDH7QbVEEikaEGOIoQknL/lMt6O/4GQvNL+DZPn0OfKwWtCdpi5qyVVRejNMbKWkgYgWzJ9Su1/9CvzHcQrUFR6w1HHggSfMHCoAAAAABJRU5ErkJggg==">
     <link rel="stylesheet" href="./rcbmix.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+     
 
 </head>
 
@@ -48,7 +51,7 @@
             <div class="w-full flex items-center justify-between header-content">
                 <div class="flex flex-col title-header">
                     <span class="uppercase text-2xl">Relatório de faturamento</span>
-                    <small>Relatório de Faturamento de Cliente e Caminhões</small>
+                    <small>Relatório de Faturamento de Clientes</small>
                 </div>
                 <!-- orgs -->
                 <div class="flex items-center gap-2 w-80">
@@ -87,14 +90,14 @@
                 </div>
                 <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
-                        <span>GASTO POR CAMINHÃO</span>
-                        <span id="lucro" class="number-font text-3xl">1,7 mi</span>
+                        <span>FATURAMENTO MÉDIO POR CAMINHÃO</span>
+                        <span id="mediaFaturado" class="number-font text-3xl">1,7 mi</span>
                     </div>
                 </div>
                 <div class="flex-1 h-36 rounded-md card">
                     <div class="flex flex-col items-center h-full justify-center gap-5">
-                        <span>MÉDIA DE COMBUSTIVEL</span>
-                        <span id="lucro" class="number-font text-3xl">900 mil</span>
+                        <span>GASTO MÉDIO POR CAMINHÃO</span>
+                        <span id="mediaGasto" class="number-font text-3xl">900 mil</span>
                     </div>
                 </div>
             </div>
@@ -104,14 +107,14 @@
                 <div class="flex flex-col gap-2">
                     <label for="form-date-picker" class="uppercase text-sm">From</label>
                     <div>
-                        <input placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
+                        <input id="from-date" placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
                         <input placeholder="" type="hidden" class="bg-primary pl-2 rounded-md h-6">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="form-date-picker" class="uppercase text-sm">to</label>
                     <div>
-                        <input placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
+                        <input id="to-date" placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
                         <input placeholder="" type="hidden" class="bg-primary pl-2 rounded-md h-6">
                     </div>
                 </div>
@@ -137,6 +140,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="./rcbmix.js"></script>
+    <script src="./filter.js"></script>
 </body>
 
 </html>
