@@ -9,13 +9,16 @@
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAMFBMVEVHcEwA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WIA7WJ79BRFAAAAD3RSTlMAYCTnRjKkxfkVERCgscbEgDwQAAAAaklEQVQYlWVP7RKAIAgbKn5l8f5vm6CWV/vBbQOOASiCdAS84K/h1HCDH7QbVEEikaEGOIoQknL/lMt6O/4GQvNL+DZPn0OfKwWtCdpi5qyVVRejNMbKWkgYgWzJ9Su1/9CvzHcQrUFR6w1HHggSfMHCoAAAAABJRU5ErkJggg==">
     <link rel="stylesheet" href="./rcbmix.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
     
 
 </head>
 
 <body>
 
-    <div class="bg-second w-full h-auto text-main flex sm:w-full">
+    <div class="bg-second w-auto h-auto text-main flex main-content">
         <!-- sidebar -->
         <div class="flex-initial min-w-14 h-auto bg-primary flex justify-center">
             <nav class="w-full">
@@ -31,7 +34,7 @@
                         </a>
                     </li>
                     <li class="hover-menu">
-                        <a href="#">
+                        <a href="./caminhoes.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="#CACDD1">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.52832 16.826C8.53464 17.7132 8.01843 18.5166 7.22106 18.8607C6.42369 19.2047 5.50274 19.0213 4.88882 18.3962C4.27491 17.7712 4.08935 16.828 4.41891 16.0077C4.74847 15.1873 5.52803 14.652 6.39307 14.652C6.95731 14.6499 7.49925 14.8777 7.89969 15.2854C8.30013 15.6931 8.52625 16.2473 8.52832 16.826V16.826Z" stroke="#CACDD1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7015 16.826C18.7078 17.7132 18.1916 18.5166 17.3942 18.8607C16.5969 19.2047 15.6759 19.0213 15.062 18.3962C14.4481 17.7712 14.2625 16.828 14.5921 16.0077C14.9216 15.1873 15.7012 14.652 16.5662 14.652C17.1305 14.6499 17.6724 14.8777 18.0728 15.2854C18.4733 15.6931 18.6994 16.2473 18.7015 16.826Z" stroke="#CACDD1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -45,16 +48,16 @@
         <!-- content -->
         <div class="flex-initial w-full h-full px-8 pt-6">
             <!-- header -->
-            <div class="w-full flex items-center justify-between">
-                <div class="flex flex-col">
+            <div class="w-full flex items-center justify-between header-content">
+                <div class="flex flex-col title-header">
                     <span class="uppercase text-2xl">Relatório de faturamento</span>
-                    <small>Relatório de Faturamento de Cliente e Caminhões</small>
+                    <small>Relatório de Faturamento de Caminhões</small>
                 </div>
                 <!-- orgs -->
                 <div class="flex items-center gap-2 w-80">
-                    <span>Clientes:</span>
+                    <span>Caminhões:</span>
                     <div class="flex items-center w-full">
-                        <select name="" class="rounded-md bg-primary w-full text-main font-bold focus:outline-none focus:bg-primary focus:shadow-md" id="form-field">
+                        <select name="" class="rounded-md bg-primary w-full py-2 px-4 text-main font-bold focus:outline-none focus:bg-primary focus:shadow-md" id="form-field">
                             <option value="Default" selected class="bg-primary text-main">TOTAL</option>
                             
                         </select>
@@ -64,7 +67,7 @@
 
             <!-- bignumbers -->
 
-            <div class="w-full h-44 rounded-md my-10 bg-primary flex items-center gap-10 px-4 flex-wrap">
+            <div class="w-full h-44 rounded-md my-10 bg-primary flex items-center gap-10 px-4 content-card">
                 <!-- cardbignumber -->
                 
                 <div class="flex-1 h-36 rounded-md card">
@@ -104,14 +107,14 @@
                 <div class="flex flex-col gap-2">
                     <label for="form-date-picker" class="uppercase text-sm">From</label>
                     <div>
-                        <input placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
+                        <input id="from-date" placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
                         <input placeholder="" type="hidden" class="bg-primary pl-2 rounded-md h-6">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="form-date-picker" class="uppercase text-sm">to</label>
                     <div>
-                        <input placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
+                        <input id="to-date" placeholder="Data" class="bg-primary pl-2 rounded-md h-9">
                         <input placeholder="" type="hidden" class="bg-primary pl-2 rounded-md h-6">
                     </div>
                 </div>
@@ -137,6 +140,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="./rcbmix.js"></script>
+    <script src="./filter.js"></script>
 </body>
 
 </html>
