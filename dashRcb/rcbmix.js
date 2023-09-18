@@ -85,13 +85,14 @@ var options = {
     },
     plotOptions: {
         bar: {
-            columnWidth: '50%',
+            columnWidth: '20%',
+            borderRadius: 5
         }
     },
 
     fill: {
         colors: ['#14c03d', '#00cfe8', '#ea5455'],
-        opacity: [0.25, 0.25, 0.80],
+        opacity: [0.25, 1, 0.80],
         gradient: {
             inverseColors: false,
             shade: 'dark',
@@ -252,6 +253,8 @@ console.log(endEmpresas)
 let faturado = document.getElementById('faturado')
 let gasto = document.getElementById('gasto')
 let lucro = document.getElementById('lucro')
+let mediaFaturado = document.getElementById('mediaFaturado')
+let mediaGasto = document.getElementById('mediaGasto')
 let selectElement = document.getElementById('form-field')
 
 const nomeEmpresas = Object.keys(endEmpresas[0]);
@@ -317,6 +320,9 @@ function updateValues(selectedCompany) {
         faturado.textContent = `R$ ${somaTotal.somaFaturado}`;
         gasto.textContent = `R$ ${somaTotal.somaGasto}`;
         lucro.textContent = `R$ ${somaTotal.somaLucro}`;
+        mediaFaturado.textContent = `R$ ${formatValue(104027.78)}`;
+        mediaGasto.textContent = `R$ ${formatValue(1379.62)}`;
+        
     } else {
         const selectedEmpresa = endEmpresas[0][selectedCompany];
 
