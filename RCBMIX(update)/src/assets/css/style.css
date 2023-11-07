@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #283046;
+  --secondary: #161D31;
+  --color-text: #CACDD1;
+  --green: #14c03d;
+  --blue: #00cfe8;
+  --red: #ea5455;
+  --head-table: #343D55;
+}
+
+.number-font {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.bg-second {
+  background: var(--secondary);
+}
+
+.text-main {
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+}
+
+.bg-btn-filter {
+  background: #00cfe8;
+}
+
+.card {
+  background-color: #161D3174;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: .7rem;
+  transition: all ease .3s;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px 1px #161D3170;
+}
+
+.apexcharts-xaxis-label-y {
+  letter-spacing: 0.1rem;
+}
+
+#form-field::selection {
+  color: var(--color-text);
+}
+
+option {
+  color: var(--color-text);
+}
+
+.bg-header-t {
+  background: var(--head-table);
+}
+
+#table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: var(--primary);
+}
+
+#table.dataTable.display tbody tr.even>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: var(--primary);
+}
+
+#table.dataTable tbody tr {
+  background-color: var(--primary);
+}
+
+#table.dataTable.row-border tbody th,
+#table.dataTable.row-border tbody td,
+#table.dataTable.display tbody th,
+#table.dataTable.display tbody td {
+  border-top: 1px solid var(--secondary);
+}
+
+.dataTables_length label {
+  color: var(--color-text);
+}
+
+.dataTables_wrapper .dataTables_length select {
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  background-color: transparent;
+  padding: 4px;
+  color: var(--color-text);
+}
+
+.dataTables_filter label,
+.dataTables_filter input,
+#table_info {
+  color: var(--color-text);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: var(--color-text) !important;
+  border: 1px solid var(--secondary) !important;  
+  background-color: var(--primary) !important;
+}
+
+#table1.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: var(--primary);
+}
+#table1.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: var(--primary);
+}
+#table1.dataTable tbody tr {
+  background-color: var(--primary);
+}
+#table1.dataTable.row-border tbody th, #table1.dataTable.row-border tbody td, #table1.dataTable.display tbody th, #table1.dataTable.display tbody td {
+  border-top: 1px solid var(--secondary);
+}
+
+/* media */
+/* Para 'sm': {'min': '640px', 'max': '767px'} */
+@media screen and (min-width: 640px) and (max-width: 767px) {
+
+}
+
+/* Para 'md': {'min': '768px', 'max': '1023px'} */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Estilos para a faixa 'md' */
+}
+
+/* Para 'lg': {'min': '1024px', 'max': '1279px'} */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* Estilos para a faixa 'lg' */
+}
+
+/* Para 'xl': {'min': '1280px', 'max': '1535px'} */
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+  /* Estilos para a faixa 'xl' */
+}
+
+/* Para '2xl': {'min': '1536px'} */
+@media screen and (min-width: 1536px) {
+  /* Estilos para a faixa '2xl' */
+}
